@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Catalog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <h3>Телефонная книга</h3>
+        <p><a href="/Phone/Add/" class="btn btn-default btn-custom">Добавить</a></p>
+        <table class="table table-striped" style="width:70%;">
+            <tr style="font-size:medium;">
+                <td><p>Имя</p></td>
+                <td><p>Фамилия</p></td>
+                <td><p>Отчество</p></td>
+                <td><p>Номер</p></td>
+                <td><p>Дата рождения</p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+            </tr>
+            @foreach (var per in ViewBag.Catalog)
+            {
+                <tr scope="row">
+                    <td><p>@per.Firstname</p></td>
+                    <td><p>@per.Surname</p></td>
+                    <td><p>@per.Middlename</p></td>
+                    <td><p>@per.Phone</p></td>
+                    <td><p>@per.BDay.ToShortDateString()</p></td>
+                    <td><p><a href="/Phone/Update/@per.ID">Изменить</a></p></td>
+                    <td><p><a href="/Phone/Delete/@per.ID">Удалить</a></p></td>
+                </tr>
+            }
+        </table>
+        @if (ViewBag.err != null)
+        {
+            <p>@ViewBag.err</p>
+        }
+    </div>
+</body>
+</html>

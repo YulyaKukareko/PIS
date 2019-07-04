@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Videos/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Error</h2>
+@using (Html.BeginForm("Upload", "Videos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" />
+    <br />
+    <br />
+    <input type="submit" name="submit" value="Submit" />
+}

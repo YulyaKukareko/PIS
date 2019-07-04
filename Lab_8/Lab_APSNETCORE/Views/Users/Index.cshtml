@@ -1,0 +1,34 @@
+﻿@using Lab_APSNETCORE.Services
+@inject UsersService UsersService
+@{
+    ViewData["Title"] = "Index";
+    var users = UsersService.Read();
+}
+
+<h2>Index</h2>
+
+<div style="margin: 64px; ">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>First name</td>
+                <td>Last name</td>
+                <td>Birthday</td>
+                <td>Gender</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in users)
+            {
+                <tr>
+                    <td>@obj.Id</td>
+                    <td>@obj.FirstName</td>
+                    <td>@obj.LastName</td>
+                    <td>@obj.Birthday.ToShortDateString()</td>
+                    <td>@obj.Gender</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

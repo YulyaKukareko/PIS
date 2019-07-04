@@ -1,0 +1,59 @@
+﻿@*@model IEnumerable<BookStore.Models.Book>*@
+
+@*@helper BookList(IEnumerable<BookStore.Models.Book> books)
+    {
+        <ul>
+            @foreach (BookStore.Models.Book b in books)
+            {
+                <li>@b.Name</li>
+            }
+        </ul>
+    }*@
+
+@*@BookList(Model)*@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <h3> Изменение контакта </h3>
+        <form method="post" action="">
+            <table class="table table-striped" style="width:50%;">
+                <tr scope="row">
+                    <td><p> Введите имя </p></td>
+                    <td><input type="text" name="Firstname" value="@ViewBag.Person.Firstname" /> </td>
+                </tr>
+                <tr scope="row">
+                    <td><p> Введите фамилию </p></td>
+                    <td><input type="text" name="Surname" value="@ViewBag.Person.Surname" /></td>
+                </tr>
+                <tr scope="row">
+                    <td><p> Введите отчество </p></td>
+                    <td><input type="text" name="Middlename" value="@ViewBag.Person.Middlename" /> </td>
+                </tr>
+                <tr scope="row">
+                    <td><p> Введите номер телефона :</p></td>
+                    <td><input type="text" name="Phone" value="@ViewBag.Person.Phone" /></td>
+                </tr>
+                <tr scope="row">
+                    <td><p> Введите дату рождения :</p></td>
+                    <td><input type="text" name="BDay" value="@ViewBag.Person.BDay.ToShortDateString()" /></td>
+                </tr>
+                <tr scope="row"><td> <br /><input type="submit" value="Изменить" class="btn btn-default btn-custom" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

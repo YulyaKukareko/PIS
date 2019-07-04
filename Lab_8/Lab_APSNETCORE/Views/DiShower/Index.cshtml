@@ -1,0 +1,15 @@
+﻿@using Lab_APSNETCORE.Controllers
+@inject ForSingletonInject SingletonInject
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    Scope: @ViewBag.Scope
+</div>
+<div>
+    Singleton: @ViewBag.Singleton
+</div>
+<div>
+    Singleton with inject: @SingletonInject.GetId()
+</div>

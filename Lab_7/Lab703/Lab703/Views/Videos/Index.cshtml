@@ -1,0 +1,7 @@
+﻿@using Lab703.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Videos/_Layout.cshtml";
+}
+
+@Html.Partial("VideosList", (List<VideoModel>)ViewBag.VideosList)

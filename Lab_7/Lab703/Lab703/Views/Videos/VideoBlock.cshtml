@@ -1,0 +1,15 @@
+﻿@using Lab703.Models
+@{
+    ViewBag.Title = "VideoBlock";
+    Layout = "~/Views/Videos/_Layout.cshtml";
+}
+
+<h2>VideoBlock</h2>
+<div class="row">
+    <div class="col-6">
+        @Html.Partial("VideosList", (List<VideoModel>)ViewBag.VideosList)
+    </div>
+    <div class="col-6">
+        @Html.Partial("Video")
+    </div>
+</div>

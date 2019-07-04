@@ -1,0 +1,41 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Create";
+}
+@using (Html.BeginForm("Create", "Users"))
+{
+<div style="margin: 64px; ">
+    <table class="table table-striped">
+        <thead>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>First name</td>
+                <td><input asp-for="FirstName" /></td>
+                <td><span asp-validation-for="FirstName"></span></td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td><input asp-for="LastName" /></td>
+                <td><span asp-validation-for="LastName"></span></td>
+            </tr>
+            <tr>
+                <td>Birthday</td>
+                <td><input asp-for="Birthday" /></td>
+                <td><span asp-validation-for="Birthday"></span></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>@Html.DropDownListFor(x => x.Gender, ViewBag.Genders as IEnumerable<SelectListItem>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add" /></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+}

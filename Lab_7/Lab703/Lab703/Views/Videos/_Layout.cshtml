@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/popper-utils.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/popper.min.js"></script>
+    <title>Video hosting</title>
+</head>
+<body>
+    <header>
+        <div>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    @Html.ActionLink("Videos list", "Index")
+                </li>
+                <li class="nav-item active">
+                    @Html.ActionLink("Upload video", "Upload")
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
