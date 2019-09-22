@@ -14,9 +14,6 @@ namespace WcfServiceLibrary
         [OperationContract]
         string GetData(int value);
 
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
         // TODO: Добавьте здесь операции служб'
         [OperationContract]
         int Sum(int x, int y);
@@ -26,28 +23,5 @@ namespace WcfServiceLibrary
 
         [OperationContract]
         string ConCat(string x, string y);
-    }
-
-    // Используйте контракт данных, как показано на следующем примере, чтобы добавить сложные типы к сервисным операциям.
-    // В проект можно добавлять XSD-файлы. После построения проекта вы можете напрямую использовать в нем определенные типы данных с пространством имен "WcfServiceLibrary.ContractType".
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
     }
 }

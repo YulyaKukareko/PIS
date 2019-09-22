@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ServiceModel;
 
 namespace Client
 {
@@ -41,6 +42,18 @@ namespace Client
         }
 
         private void y_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ServiceHost ws;
+            ws = new ServiceHost(typeof(WcfServiceLibrary1.Service1));
+            ws.Open();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

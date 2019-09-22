@@ -11,6 +11,7 @@ namespace Lab_APSNETCORE.Controllers
     {
         private readonly UsersService _usersService;
         public UsersController(UsersService usersService) => _usersService = usersService;
+
         [HttpGet]
         public ActionResult Index() => View();
         private List<SelectListItem> GetGenders()
